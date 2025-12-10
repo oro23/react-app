@@ -1,7 +1,7 @@
-.App {
+/* .App {
   text-align: center;
-}
-
+} */
+/*
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -23,7 +23,10 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+*/
+.nav-link a {
+  color: #000;
+}
 .App-link {
   color: #61dafb;
 }
