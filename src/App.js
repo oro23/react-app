@@ -24,6 +24,7 @@ import { ThemeContextProvider } from "./context/ThemeContext";
 import ReduxMovies from "./components/ReduxMovies";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
+import Products from "./components/Products";
 // import AxiosForm from "./components/AxiosForm";
 // import FormikForm from "./components/FormikForm";
 // const ThemeContext = createContext("light");
@@ -70,6 +71,7 @@ function App() {
                   <Route path="add-post" element={<RHFPost />} />
                   <Route path="movie-list" element={<JFMovies />} />
                   <Route path="movies" element={<ReduxMovies />} />
+                  <Route path="products" element={<Products />} />
                 </Route>
               </Routes>
             </header>

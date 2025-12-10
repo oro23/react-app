@@ -125,6 +125,15 @@ export default function Navbar(props) {
                     >
                       Movies List
                     </Link>
+                    <Link
+                      className="nav-link"
+                      to="/dashboard/products"
+                      style={{
+                        color: theme === "dark" ? "white" : "black",
+                      }}
+                    >
+                      Products
+                    </Link>
                   </li>
                 </ul>
               </li>

@@ -4,13 +4,14 @@ import axios from "axios";
 // ---------------------
 // ASYNC THUNK
 // ---------------------
-export const fetchMovies = createAsyncThunk(
-  "movie/fetchMovies",
+export const fetchProducts = createAsyncThunk(
+  "product/fetchProducts",
   async (page, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `https://jsonfakery.com/movies/paginated?page=${page}`
+        `https://jsonfakery.com/products/paginated?page=${page}`
       );
+      console.log("Products List:", response.data);
       return response.data; // what reducer will receive
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);
@@ -21,48 +22,48 @@ export const fetchMovies = createAsyncThunk(
 // ---------------------
 // SLICE
 // ---------------------
-const movieSlice = createSlice({
-  name: "movie",
+const productSlice = createSlice({
+  name: "product",
   initialState: {
-    movies: [],
-    filteredMovies: [],
-    selectedMovie: null,
+    products: [],
+    filteredProducts: [],
+    selectedProducts: null,
     lastPage: 1,
     loading: false,
     error: null,
   },
   reducers: {
-    setSelectedMovie: (state, action) => {
-      state.selectedMovie = action.payload;
+    setSelectedProduct: (state, action) => {
+      state.selectedProducts = action.payload;
     },
   },
 
   extraReducers: (builder) => {
     builder
       // pending (loading)
-      .addCase(fetchMovies.pending, (state) => {
+      .addCase(fetchProducts.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
 
       // success
-      .addCase(fetchMovies.fulfilled, (state, action) => {
+      .addCase(fetchProducts.fulfilled, (state, action) => {
         state.loading = false;
 
         // API response data structure:
         // { data: [...], last_page, current_page, ... }
-        state.movies = action.payload.data;
-        state.filteredMovies = action.payload.data;
+        state.products = action.payload.data;
+        state.filteredProducts = action.payload.data;
         state.lastPage = action.payload.last_page;
       })
 
       // error
-      .addCase(fetchMovies.rejected, (state, action) => {
+      .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });
   },
 });
 
-export const { setSelectedMovie } = movieSlice.actions;
-export default movieSlice.reducer;
+export const { setSelectedProduct } = productSlice.actions;
+export default productSlice.reducer;
