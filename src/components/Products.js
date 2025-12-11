@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../redux/productSlice";
+import { addToCart } from "../redux/cartSlice";
 import { Link } from "react-router-dom";
 
 export default function Products() {
   const dispatch = useDispatch();
   //   const movies = useSelector((state) => state.movie.movies);
-  const products = useSelector((state) => state.product.products);
+  const { filteredProducts } = useSelector((state) => state.product);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPage, setLastPage] = useState(1);
 
   useEffect(() => {
     dispatch(fetchProducts(currentPage));
   }, [dispatch, currentPage]);
+
+  // const handleAdd = () => {
+  //   dispatch(addToCart(product));
+  // };
 
   const generatePageNumbers = () => {
     const pages = [];
@@ -53,7 +59,7 @@ export default function Products() {
 
   return (
     <div className="row">
-      {products.map((product) => (
+      {filteredProducts?.map((product) => (
         <div className="col-3 mb-3" key={product.id}>
           <div className="card h-100">
             <img
@@ -65,6 +71,25 @@ export default function Products() {
             <div className="card-body">
               <h5 className="card-title">{product.name}</h5>
               <p className="card-text">${product.price}</p>
+            </div>
+            <div
+              className="card-footer"
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Link to={`/products/${product.id}`} className="btn btn-primary">
+                View Details
+              </Link>
+              {/* implement cart */}
+              <button
+                className="btn btn-success"
+                onClick={() => dispatch(addToCart(product))}
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ export const fetchProducts = createAsyncThunk(
       const response = await axios.get(
         `https://jsonfakery.com/products/paginated?page=${page}`
       );
-      console.log("Products List:", response.data);
+      // console.log("Products List:", response.data);
       return response.data; // what reducer will receive
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);
@@ -36,6 +36,15 @@ const productSlice = createSlice({
     setSelectedProduct: (state, action) => {
       state.selectedProducts = action.payload;
     },
+    setFilteredProducts: (state, action) => {
+      state.filteredProducts = action.payload;
+    },
+    // setFilteredProducts: (state, action) => {
+    //   const term = action.payload.toLowerCase();
+    //   state.filteredProducts = state.products.filter((product) =>
+    //     product.name.toLowerCase().includes(term)
+    //   );
+    // },
   },
 
   extraReducers: (builder) => {
@@ -65,5 +74,5 @@ const productSlice = createSlice({
   },
 });
 
-export const { setSelectedProduct } = productSlice.actions;
+export const { setSelectedProduct, setFilteredProducts } = productSlice.actions;
 export default productSlice.reducer;
