@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import UseEffectExample from "../components/UseEffect";
+// import UseEffectExample from "../components/UseEffect";
 import PostDetail from "../components/PostDetail";
 import MovieDetail from "../components/MovieDetail";
 import Cart from "../components/Cart";
@@ -11,11 +11,13 @@ import JFMovies from "../components/JFMovies";
 import ReduxMovies from "../components/ReduxMovies";
 import Products from "../components/Products";
 import Login from "../components/Login";
+import RQPosts from "../components/RQPosts";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<UseEffectExample />} />
+      {/* <Route path="/" element={<UseEffectExample />} /> */}
+      <Route path="/" element={<RQPosts />} />
       <Route path="/PostDetail/:id" element={<PostDetail />} />
       <Route path="/MovieDetail/:id" element={<MovieDetail />} />
       <Route path="/login" element={<Login />} />

@@ -15,6 +15,7 @@ import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import { ProductsProvider } from "./context/ProductContext";
 import AppRoutes from "./routes/AppRoutes";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 // import JsonPH from "./components/JsonPH";
 // import AxiosForm from "./components/AxiosForm";
 // import FormikForm from "./components/FormikForm";
@@ -30,34 +31,37 @@ import AppRoutes from "./routes/AppRoutes";
 // }
 
 function App() {
+  const querClient = new QueryClient();
   return (
     <Provider store={store}>
       <ThemeContextProvider>
-        <MoviesProvider>
-          <ProductsProvider>
-            {/* <UseContext /> */}
-            {/* <AxiosForm /> */}
-            {/* <FormikForm /> */}
-            <div className={`App`}>
-              <Navbar />
-              {/* <JsonPH /> */}
-              <header className="App-header container">
-                {/* <Greet name="Alice">
-            <h2>I'm a Senior Software Engineer</h2>
-          </Greet> */}
-                {/* <Click /> */}
-                {/* <Tasks /> */}
-                {/* <ClickCount /> */}
-                {/* <UseEffectExample /> */}
-                {/* <UseCallback /> */}
-                {/* <Panel theme={theme} toggleTheme={toggleTheme} /> */}
-                {/* <UsersList /> */}
+        <QueryClientProvider client={querClient}>
+          <MoviesProvider>
+            <ProductsProvider>
+              {/* <UseContext /> */}
+              {/* <AxiosForm /> */}
+              {/* <FormikForm /> */}
+              <div className={`App`}>
+                <Navbar />
+                {/* <JsonPH /> */}
+                <header className="App-header container">
+                  {/* <Greet name="Alice">
+                  <h2>I'm a Senior Software Engineer</h2>
+                </Greet> */}
+                  {/* <Click /> */}
+                  {/* <Tasks /> */}
+                  {/* <ClickCount /> */}
+                  {/* <UseEffectExample /> */}
+                  {/* <UseCallback /> */}
+                  {/* <Panel theme={theme} toggleTheme={toggleTheme} /> */}
+                  {/* <UsersList /> */}
 
-                <AppRoutes />
-              </header>
-            </div>
-          </ProductsProvider>
-        </MoviesProvider>
+                  <AppRoutes />
+                </header>
+              </div>
+            </ProductsProvider>
+          </MoviesProvider>
+        </QueryClientProvider>
       </ThemeContextProvider>
     </Provider>
   );

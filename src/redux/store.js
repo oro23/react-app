@@ -5,6 +5,7 @@ import cartReducer from "./cartSlice";
 import counterReducer from "./counterSlice";
 import jsonphReducer from "./jsonphSlice";
 import loginreducer from "./loginSlice";
+import uiSliceReducer from "./uiSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     counter: counterReducer,
     jsonph: jsonphReducer,
     login: loginreducer,
+    ui: uiSliceReducer,
   },
 });
 
