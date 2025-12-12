@@ -15,6 +15,7 @@ import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import { ProductsProvider } from "./context/ProductContext";
 import AppRoutes from "./routes/AppRoutes";
+// import JsonPH from "./components/JsonPH";
 // import AxiosForm from "./components/AxiosForm";
 // import FormikForm from "./components/FormikForm";
 // const ThemeContext = createContext("light");
@@ -39,6 +40,7 @@ function App() {
             {/* <FormikForm /> */}
             <div className={`App`}>
               <Navbar />
+              {/* <JsonPH /> */}
               <header className="App-header container">
                 {/* <Greet name="Alice">
             <h2>I'm a Senior Software Engineer</h2>

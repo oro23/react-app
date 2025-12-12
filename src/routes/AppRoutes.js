@@ -10,6 +10,7 @@ import RHFPost from "../components/RHFPost";
 import JFMovies from "../components/JFMovies";
 import ReduxMovies from "../components/ReduxMovies";
 import Products from "../components/Products";
+import Login from "../components/Login";
 
 const AppRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const AppRoutes = () => {
       <Route path="/" element={<UseEffectExample />} />
       <Route path="/PostDetail/:id" element={<PostDetail />} />
       <Route path="/MovieDetail/:id" element={<MovieDetail />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/dashboard/*" element={<Dashboard />}>
         <Route index element={<div>Welcome to Dashboard!</div>} />

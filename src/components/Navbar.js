@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { setFilteredProducts } from "../redux/productSlice";
 
-export default function Navbar(props) {
+export default function Navbar() {
   const dispatch = useDispatch();
   // 🛒 Get cart items from Redux
   const cartItems = useSelector((state) => state.cart.items);
@@ -167,26 +167,18 @@ export default function Navbar(props) {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropdown
+                  Authentication
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="/">
-                      Action
-                    </a>
+                    <Link className="nav-link" to="/login">
+                      Login
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="/">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="/">
-                      Something else here
-                    </a>
+                    <Link className="dropdown-item" to="/register">
+                      Register
+                    </Link>
                   </li>
                 </ul>
               </li>
