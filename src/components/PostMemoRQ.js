@@ -2,9 +2,10 @@ import React from "react";
 import { usePosts } from "../hooks/usePosts";
 import { useDispatch } from "react-redux";
 import { setSelectedPostId } from "../redux/uiSlice";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import PostItem from "./PostItem";
 
-export default function RQPosts() {
+export default function PostMemoRQ() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { data, isLoading, error } = usePosts();
@@ -21,14 +22,7 @@ export default function RQPosts() {
     <div>
       <h2>Posts</h2>
       {data.map((post) => (
-        <div
-          key={post.id}
-          style={{ cursor: "pointer", marginBottom: "12px" }}
-          onClick={() => handleClick(post.id)}
-          // to={`/PostDetail/${post.id}`}
-        >
-          <strong>{post.title}</strong>
-        </div>
+        <PostItem key={post.id} post={post} onClick={handleClick} />
       ))}
     </div>
   );

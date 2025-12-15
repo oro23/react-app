@@ -40,3 +40,11 @@
   }
 }
 
+.post-item {
+  cursor: pointer;
+  margin-bottom: 12px;
+  color: #000;
+  text-decoration: none;
+  font-family: normal;
+  display: block;
+}

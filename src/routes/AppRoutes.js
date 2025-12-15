@@ -11,13 +11,15 @@ import JFMovies from "../components/JFMovies";
 import ReduxMovies from "../components/ReduxMovies";
 import Products from "../components/Products";
 import Login from "../components/Login";
-import RQPosts from "../components/RQPosts";
+// import RQPosts from "../components/RQPosts";
+import PostMemoRQ from "../components/PostMemoRQ";
 
 const AppRoutes = () => {
   return (
     <Routes>
       {/* <Route path="/" element={<UseEffectExample />} /> */}
-      <Route path="/" element={<RQPosts />} />
+      <Route path="/" element={<PostMemoRQ />} />
+      {/* <Route path="/" element={<RQPosts />} /> */}
       <Route path="/PostDetail/:id" element={<PostDetail />} />
       <Route path="/MovieDetail/:id" element={<MovieDetail />} />
       <Route path="/login" element={<Login />} />
