@@ -16,6 +16,11 @@ import { Provider } from "react-redux";
 import { ProductsProvider } from "./context/ProductContext";
 import AppRoutes from "./routes/AppRoutes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ZuPosts from "./components/ZuPosts";
+import RefDemo from "./components/RefDemo";
+// import PureComp from "./components/PureComp";
+// import { useState } from "react";
+
 // import JsonPH from "./components/JsonPH";
 // import AxiosForm from "./components/AxiosForm";
 // import FormikForm from "./components/FormikForm";
@@ -32,6 +37,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
   const querClient = new QueryClient();
+  // const [name, setName] = useState("John");
+
+  // const handleClick = (val) => {
+  //   setName(val);
+  // };
+
   return (
     <Provider store={store}>
       <ThemeContextProvider>
@@ -43,11 +54,19 @@ function App() {
               {/* <FormikForm /> */}
               <div className={`App`}>
                 <Navbar />
+                {/* <ZuPosts /> */}
+                <RefDemo />
+                {/* <PureComp name={name} />
+                <button onClick={() => handleClick("Muqeeet")}>
+                  Set Muqeet
+                </button>
+                <button onClick={() => handleClick("Jhon")}>Set Jhon</button>
+                <button onClick={() => handleClick("Jhon")}>Set Jhon</button> */}
                 {/* <JsonPH /> */}
                 <header className="App-header container">
                   {/* <Greet name="Alice">
-                  <h2>I'm a Senior Software Engineer</h2>
-                </Greet> */}
+                    <h2>I'm a Senior Software Engineer</h2>
+                  </Greet> */}
                   {/* <Click /> */}
                   {/* <Tasks /> */}
                   {/* <ClickCount /> */}
