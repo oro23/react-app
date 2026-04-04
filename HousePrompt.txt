@@ -1,0 +1,39 @@
+Design a modern and elegant 2-story residential house layout for a 2 kanal plot, divided into two connected but independent 1 kanal houses.
+
+Plot Details:
+
+Each kanal: 55 ft (width) × 99 ft (depth)
+Combined layout: 110 ft × 99 ft, arranged in a straight row
+The design should appear harmonious and symmetrical, yet allow clear separation between the two houses
+
+Design Requirements:
+
+Each 1 kanal unit should function as a fully independent house
+Use a modern architectural style with clean lines, large windows, and a premium, elegant finish
+Houses should be visually connected but with distinct entrances and privacy
+
+Veranda Specifications:
+
+Include a front veranda in each house, positioned in front of the main hall/living area
+The veranda roof should be 3 feet lower than the main roof level
+Install a decorative grill/pergola structure on the veranda roof
+Add a separate grill/pergola design for the main roof, distinct from the veranda grill
+
+Layout Suggestions (per house):
+
+Ground floor: entrance lobby, drawing room, living hall, kitchen, dining, guest bedroom, powder room
+First floor: 3–4 bedrooms with attached bathrooms, family lounge, terrace/balcony access
+Include natural light, ventilation, and functional circulation
+
+Additional Preferences:
+
+Provide parking space for each house
+Use modern materials (glass, stone, wood accents, neutral tones)
+Consider landscaping in front setback
+Maintain privacy between both houses while keeping a unified facade
+
+Output Expectations:
+
+2D floor plans (both floors for each house)
+Front elevation showing both houses together
+Highlight veranda level difference and grill designs clearly
