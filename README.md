@@ -1,7 +1,6 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App].
-https://hacksnation.com/d/43973-code-with-mosh-claude-code-for-professional-developers
 ## Available Scripts
 
 In the project directory, you can run:
