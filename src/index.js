@@ -9,12 +9,12 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 //   <React.StrictMode>
 //     <App />
 //   </React.StrictMode>
-// );
+// );https://chatgpt.com/share/6a841f29-736c-83eb-a5fb-88a9695994c1
 // root.render(<App />);
 root.render(
   <BrowserRouter>
     <App />
-  </BrowserRouter>
+  </BrowserRouter>,
 );
 
 // If you want to start measuring performance in your app, pass a function
